@@ -1,0 +1,7 @@
+{
+  "name": "okf-wiki-template",
+  "version": "1.0.0",
+  "scripts": {
+    "validate": "node scripts/validator.js"
+  }
+}
