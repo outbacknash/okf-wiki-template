@@ -16,6 +16,8 @@ jobs:
         with:
           node-version: '20'
       - run: npm install
+      - name: Test the validator (regression suite)
+        run: npm test
       - name: Validate OKF conformance (fails on errors)
         run: npm run validate
       - name: Surface house-style warnings (non-blocking)

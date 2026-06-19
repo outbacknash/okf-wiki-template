@@ -33,6 +33,7 @@ const DEFAULT_CONFIG = {
     'node_modules/**',
     '.git/**',
     'templates/**',
+    'test/**',
     'README.md',
     'CONTRIBUTING.md',
     'CLAUDE.md',

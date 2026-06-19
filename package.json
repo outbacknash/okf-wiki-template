@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "validate": "node scripts/validator.js",
-    "validate:strict": "OKF_STRICT=1 node scripts/validator.js"
+    "validate:strict": "OKF_STRICT=1 node scripts/validator.js",
+    "test": "node test/run.js"
   },
   "dependencies": {
     "js-yaml": "^4.2.0"
