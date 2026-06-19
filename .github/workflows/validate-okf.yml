@@ -14,6 +14,9 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
       - run: npm install
-      - run: npm run validate
+      - name: Validate OKF conformance (fails on errors)
+        run: npm run validate
+      - name: Surface house-style warnings (non-blocking)
+        run: npm run validate:strict || true

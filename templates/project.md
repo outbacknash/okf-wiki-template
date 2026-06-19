@@ -1,16 +1,14 @@
 ---
-title: Project Name
+title: {{title}}
 type: project
-timestamp: {{timestamp}}
+description: One sentence summarizing this project.
+timestamp: {{date:YYYY-MM-DDTHH:mm:ssZ}}
 ---
 
-# Project Name
+# {{title}}
 
 ## Goal
 What are we trying to achieve?
 
 ## Status
 - [ ] Milestone 1
-
-## Log
-- **2026-06-16**: Initialized project.

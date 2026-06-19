@@ -1,10 +1,11 @@
 ---
-title: Procedure Name
+title: {{title}}
 type: procedure
-timestamp: {{timestamp}}
+description: One sentence summarizing this procedure.
+timestamp: {{date:YYYY-MM-DDTHH:mm:ssZ}}
 ---
 
-# Procedure Name
+# {{title}}
 
 ## Purpose
 Why do we follow this procedure?

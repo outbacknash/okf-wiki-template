@@ -1,10 +1,11 @@
 ---
-title: Concept Name
+title: {{title}}
 type: concept
-timestamp: {{timestamp}}
+description: One sentence summarizing this concept.
+timestamp: {{date:YYYY-MM-DDTHH:mm:ssZ}}
 ---
 
-# Concept Name
+# {{title}}
 
 ## Definition
 A brief description of what this concept is.
@@ -14,4 +15,4 @@ A brief description of what this concept is.
 - Point 2
 
 ## References
-- [Link](./index.md)
+- [Related concept](./example-concept.md)

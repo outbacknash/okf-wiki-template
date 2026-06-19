@@ -1,0 +1,28 @@
+{
+  "bundleRoot": ".",
+  "ignore": [
+    "node_modules/**",
+    ".git/**",
+    "templates/**",
+    "README.md",
+    "CONTRIBUTING.md",
+    "CLAUDE.md",
+    "AGENTS.md"
+  ],
+  "okfVersion": "0.1",
+  "types": ["concept", "project", "procedure"],
+  "rules": {
+    "frontmatter-parseable": "error",
+    "type-present": "error",
+    "index-frontmatter": "error",
+    "okf-version": "warn",
+    "log-structure": "warn",
+    "type-known": "warn",
+    "title-present": "warn",
+    "description-present": "warn",
+    "timestamp-present": "warn",
+    "timestamp-iso8601": "warn",
+    "no-wikilinks": "warn",
+    "broken-link": "warn"
+  }
+}

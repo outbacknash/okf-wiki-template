@@ -1,0 +1,71 @@
+{
+  "OKF Concept": {
+    "scope": "markdown",
+    "prefix": "okf-concept",
+    "description": "New OKF concept page with conformant frontmatter",
+    "body": [
+      "---",
+      "title: ${1:Title}",
+      "type: concept",
+      "description: ${2:One sentence summary.}",
+      "timestamp: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}${CURRENT_TIMEZONE_OFFSET}",
+      "---",
+      "",
+      "# ${1:Title}",
+      "",
+      "$0"
+    ]
+  },
+  "OKF Project": {
+    "scope": "markdown",
+    "prefix": "okf-project",
+    "description": "New OKF project page with conformant frontmatter",
+    "body": [
+      "---",
+      "title: ${1:Title}",
+      "type: project",
+      "description: ${2:One sentence summary.}",
+      "timestamp: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}${CURRENT_TIMEZONE_OFFSET}",
+      "---",
+      "",
+      "# ${1:Title}",
+      "",
+      "## Goal",
+      "$0",
+      "",
+      "## Status",
+      "- [ ] Milestone 1"
+    ]
+  },
+  "OKF Procedure": {
+    "scope": "markdown",
+    "prefix": "okf-procedure",
+    "description": "New OKF procedure page with conformant frontmatter",
+    "body": [
+      "---",
+      "title: ${1:Title}",
+      "type: procedure",
+      "description: ${2:One sentence summary.}",
+      "timestamp: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}${CURRENT_TIMEZONE_OFFSET}",
+      "---",
+      "",
+      "# ${1:Title}",
+      "",
+      "## Purpose",
+      "$0",
+      "",
+      "## Steps",
+      "1. Step one."
+    ]
+  },
+  "OKF Log Entry": {
+    "scope": "markdown",
+    "prefix": "okf-log",
+    "description": "Append a date-headed log entry (newest first)",
+    "body": [
+      "## ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "",
+      "- **${1|Creation,Update,Deprecation|}**: $0"
+    ]
+  }
+}

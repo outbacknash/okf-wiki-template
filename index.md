@@ -1,7 +1,5 @@
 ---
-title: Home
-type: index
-timestamp: 2026-06-16T17:22:39+10:00
+okf_version: "0.1"
 ---
 
 # Wiki Index
