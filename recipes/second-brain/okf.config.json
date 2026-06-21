@@ -3,17 +3,16 @@
   "ignore": [
     "node_modules/**",
     ".git/**",
-    "templates/**",
-    "test/**",
-    "raw/**",
-    "recipes/**",
-    "README.md",
-    "CONTRIBUTING.md",
-    "CLAUDE.md",
-    "AGENTS.md"
+    "README.md"
   ],
   "okfVersion": "0.1",
-  "types": ["concept", "project", "procedure"],
+  "types": [
+    "note",
+    "project",
+    "area",
+    "resource",
+    "person"
+  ],
   "rules": {
     "frontmatter-parseable": "error",
     "type-present": "error",

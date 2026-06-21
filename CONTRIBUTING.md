@@ -51,13 +51,21 @@ Type the prefix in a `.md` file and accept the completion.
 - `log.md` is append-only: add entries under `## YYYY-MM-DD` headings, newest
   first.
 
-## Optional: adding a raw-sources layer
+## The `raw/` source layer
 
-OKF governs only the wiki/bundle layer, so this template ships without one. If you
-want the full "ingest" loop (curate sources → agent synthesizes pages), add a
-top-level `raw/` directory for immutable source documents and add `raw/**` to
-`okf.config.json` → `ignore` so sources are not validated as concepts. Agents then
-read from `raw/` and write conformant concepts into the bundle.
+OKF governs only the wiki/bundle layer, so `raw/` (immutable source documents) is
+**optional** and excluded from validation. Use it to run the full "ingest" loop —
+drop sources in, have an agent synthesize conformant concepts from them — or
+delete it if you curate purely by hand. See [`raw/README.md`](./raw/README.md) for
+the contract and fork scenarios.
+
+## Starter recipes
+
+[`recipes/`](./recipes/README.md) holds ready-made, conformant starter packs for
+common wiki flavors (data catalog, second brain, UX research, support, on-call
+runbooks). To adopt one, copy its contents into your bundle root or merge its
+`types` into `okf.config.json`. Each recipe validates on its own and is kept
+pristine by the test suite.
 
 ## What `templates/` is
 

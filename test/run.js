@@ -20,7 +20,10 @@ const VALIDATOR = path.resolve(__dirname, '..', 'scripts', 'validator.js');
 const FIXTURES = path.resolve(__dirname, 'fixtures');
 
 function run(fixture, env) {
-  const cwd = path.join(FIXTURES, fixture);
+  return runDir(path.join(FIXTURES, fixture), env);
+}
+
+function runDir(cwd, env) {
   try {
     const out = execFileSync('node', [VALIDATOR], {
       cwd,
@@ -93,6 +96,18 @@ check('OKF_STRICT=1 promotes the broken-link warning to a failure', () => {
   const r = run('stub-only', { OKF_STRICT: '1' });
   assert.strictEqual(r.code, 1, `expected exit 1 under strict, got ${r.code}`);
 });
+
+// 5. Every shipped recipe is itself a pristine (strict-clean) OKF bundle.
+const fs = require('fs');
+const recipesDir = path.resolve(__dirname, '..', 'recipes');
+for (const name of fs.readdirSync(recipesDir).sort()) {
+  const dir = path.join(recipesDir, name);
+  if (!fs.statSync(dir).isDirectory()) continue;
+  check(`recipe "${name}" is strict-clean (0 errors, 0 warnings)`, () => {
+    const r = runDir(dir, { OKF_STRICT: '1' });
+    assert.strictEqual(r.code, 0, `not clean:\n${stripAnsi(r.out)}`);
+  });
+}
 
 console.log('');
 if (failures > 0) {

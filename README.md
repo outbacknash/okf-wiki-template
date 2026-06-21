@@ -15,6 +15,22 @@ AI agents. Spec:
 3. Add concepts as Markdown files (e.g. in `concepts/`). Copy a file from
    `templates/` or use the editor snippets (see "Curating manually").
 
+## Repository layout
+
+| Path | What it is | Validated? |
+| --- | --- | --- |
+| `index.md`, `log.md`, `concepts/` | The OKF bundle itself (your knowledge) | **Yes** |
+| `okf.config.json` | Rule severities + `type` vocabulary + ignore globs | — |
+| `scripts/validator.js` | The conformance validator (`npm run validate`) | — |
+| `templates/` | Authoring scaffolding with `{{placeholders}}` | No (ignored) |
+| `raw/` | Immutable **source documents** the bundle is derived from | No (ignored) |
+| `recipes/` | Starter packs for common wiki flavors (data, second-brain, …) | No (ignored) |
+| `test/`, `.obsidian/`, `.vscode/` | Test suite and editor config | No (ignored) |
+
+The bundle is just the Markdown knowledge; everything else is tooling. `raw/` and
+`recipes/` are optional — see [`raw/README.md`](./raw/README.md) and
+[`recipes/README.md`](./recipes/README.md).
+
 ## What OKF v0.1 requires (and what this template adds)
 
 OKF is deliberately minimal. A bundle is **conformant** if every non-reserved

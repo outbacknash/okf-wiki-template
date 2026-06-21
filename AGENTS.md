@@ -70,6 +70,28 @@ Do **not** fabricate an empty target file to silence the warning.
   - Prefer a stable key (the concept's `resource` URI or path) in each entry so
     repeated or concurrent runs do not duplicate history.
 
+## Ingesting from `raw/` (optional source layer)
+
+If the bundle has a `raw/` directory, it holds **immutable source documents**
+(transcripts, exports, clippings). It is excluded from validation and is **not**
+part of the bundle. To ingest:
+
+1. **Read** a source from `raw/`. Do not edit or delete it — sources are immutable.
+2. **Draft or update** concept pages that summarize and cross-link it. Upsert by
+   `resource`/path; don't create a duplicate if a concept for that source exists.
+3. **Set provenance**: record the source as the concept's `resource` (or link to
+   it) so claims can be traced back.
+4. **Append** a `log.md` entry and **run `npm run validate`**.
+
+See [`raw/README.md`](./raw/README.md) for the full contract.
+
+## `recipes/` is a library, not live content
+
+The `recipes/` directory holds starter packs for different wiki flavors. It is
+**not** part of the active bundle (it is ignored by validation). Do not treat
+recipe files as live concepts or edit them as part of normal curation; copy from
+them when bootstrapping a new area, then adjust `okf.config.json` → `types`.
+
 ## Concurrent / repeated writes
 
 Multiple agents may write to this bundle. Make writes **idempotent and

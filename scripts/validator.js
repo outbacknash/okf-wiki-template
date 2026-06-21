@@ -34,6 +34,8 @@ const DEFAULT_CONFIG = {
     '.git/**',
     'templates/**',
     'test/**',
+    'raw/**',
+    'recipes/**',
     'README.md',
     'CONTRIBUTING.md',
     'CLAUDE.md',
